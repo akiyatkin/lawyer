@@ -9,10 +9,11 @@
 				/*background-image: url('/images/gray_jean.png');
 				background-size: 200px;*/
 				z-index: 1;
-				--link: var(--black);
+				
 				/*--hover: var(--blue);*/
 			}
-			.{~sid} a {
+			#{div} a {
+				--link: var(--text);
 				/*color: inherit;*/
 				border-bottom: none;
 			}
@@ -37,7 +38,7 @@
 
 			}*/
 			.{~sid} svg:hover .fil0 {
-				fill: var(--black);
+				fill: var(--text);
 			}
 		</style>
 		<div class="logoblock">
@@ -46,12 +47,178 @@
 				{:svg.logo}
 			</a>
 		</div>
-		<div class="menublock" style="font-weight: bold; text-transform: uppercase; grid-auto-flow: column; gap:1rem; justify-content: start;">
+		<div class="barblock" style="align-self: start; margin-top: 13px; opacity:0.5">
+			<style media="(min-width: 768px)">.{~sid} .barblock { display:none }</style>
+			<style media="(max-width: 767px)">.{~sid} .barblock { display:block }</style>
+			<div role="button" tabindex="0" aria-label="Меню" class="mobilebtn">
+				<style>
+					.mobilebtn {
+						user-select: none;
+						cursor: pointer;
+						display: none;
+						align-items: center;
+						align-self: center;
+						margin-left: auto;
+						height: 100%;
+						width: 36px;
+						border-radius: 0;
+						background-color: transparent;
+					}
+					.mobilebtn .bars {
+						width:100%;
+						/*margin-top:2px;*/
+					}
+					.mobilebtn .line {
+						transition: 0.2s;
+						width: 100%;
+						height: 1px;
+						border-radius: 1px;
+						background-color: var(--text);
+						border-radius: 1px;
+					}
+					.mobilebtn .line + .line {
+						margin-top: 5.35px;
+					}
+					.mobilebtn:focus .line
+					.mobilebtn:hover .line {
+						background-color: var(--orange);
+					}
+					.mobilebtn .top {
+						transform-origin: 2px 8px;
+						transform-origin: left;
+					}
+					.mobilebtn .middle {
+						opacity: 1;
+					}
+					.mobilebtn .bottom {
+						transform-origin: 4px -3px;
+						transform-origin: left;
+					}
+					
+					.mobilebtn.show .top {
+						transform: rotate(45deg);
+					}
+					.mobilebtn.show .middle {
+						opacity: 0;
+					}
+					.mobilebtn.show .bottom {	
+						transform: rotate(-45deg);
+					}
+					
+					@media (max-width: 991px) {
+						.mobilebtn {
+							display: flex;
+						}
+					}
+				</style>
+				<div class="bars">
+					<div class="line top"></div>
+					<div class="line middle"></div>
+					<div class="line middle"></div>
+					<div class="line middle"></div>
+					<div class="line bottom"></div>
+				</div>
+			</div>
+
+		</div>
+		
+		
+		<div class="menublock" style="text-transform: uppercase; /*font-weight: bold; */grid-auto-flow: column; gap:1rem; justify-content: start;">
 			<style media="(min-width: 768px)">.{~sid} .menublock { display:grid }</style>
 			<style media="(max-width: 767px)">.{~sid} .menublock { display:none }</style>
 			{data.menu.header::item}
 		</div>
 
+	</div>
+	<div class="mobilemenu">
+		<style>
+			.mobilemenu {
+				background: var(--white);
+				max-height: 0;
+				width: 100%;
+				opacity: 0;
+				z-index: 100;
+				pointer-events: none;
+				transition: 0.5s;
+				visibility: hidden;
+				overflow: hidden;
+				position: absolute;
+				left: 0;
+				margin-top: -1px;
+				padding: var(--para) 0 var(--para);
+				min-width: 360px;
+				border-bottom: 1px solid var(--text);
+			}
+			.mobilemenu.show {
+				max-height: 800px;
+				visibility: visible;
+				pointer-events: auto;
+				opacity: 1;
+			}
+			.mobilerow {
+				display: grid; grid-template-columns: 1fr max-content; 
+				grid-gap: 10px; margin-bottom: 10px; margin-top: 10px
+			}
+			@media (min-width: 768px) {
+				.mobilemenu.show {
+					max-height: 0;
+					visibility: hidden;
+					opacity: 0;
+				}
+			}
+		</style>
+		<div class="container">
+			<div class="mobileblock" style="text-transform: uppercase; width: max-content; display: grid;">
+				<style>
+				#{div} .mobileblock a {
+					line-height: 40px;
+					padding-right: 40px;
+					border: none;
+				}
+				</style>
+				{data.menu.header::item}
+				
+			</div>
+			<p align="right">
+				<button>Запросить звонок</button>
+			</p>
+		</div>
+		<script type="module" async>
+			const div = document.getElementById('{div}')
+			const tag = (tag, el = div) => el.getElementsByTagName(tag)
+			const cls = (cls, el = div) => el.getElementsByClassName(cls)
+			const bars = cls('mobilebtn')[0]
+			const mobilemenu = cls('mobilemenu')[0]
+			let is = false
+			const hide = () => {
+				if (!is) return
+				is = false
+				mobilemenu.classList.remove('show')
+				bars.classList.remove('show')
+			}
+			const show = () => {
+				if (is) return
+				is = true
+				mobilemenu.classList.add('show')
+				bars.classList.add('show')
+			}
+			const toggle = () => {
+				if (is) hide()
+				else show()
+			}
+			bars.addEventListener('click', toggle)
+			document.body.addEventListener('click', e => {
+				if (!mobilemenu.closest('body')) return;
+				let el = e.target
+				const path = [el]
+				while (el && el.parentElement) path.push(el = el.parentElement)
+				if (!path.find(el => el.tagName == 'A')) { //Клик по ссылке всегда сворачивает меню
+					if (path.find(el => el == mobilemenu)) return; //Клик внутри меню, меню не сворачивает
+					if (path.find(el => el == bars)) return; //У кнопки своя обработка
+				}
+				hide() //Скрываем меню
+			})
+		</script>
 	</div>
 	{item:}<a href="{href}">{name}</a> 
 {FOOTER:}
@@ -59,7 +226,7 @@
 		<style>
 			footer {
 				color: white;
-				background-color: black;
+				background-color: var(--text);
 			}
 			footer .cont img {
 				margin-right:10px;

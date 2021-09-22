@@ -19,8 +19,9 @@ body {
 	--link:  #0095BE;
 	--hover: #55c8ff;
 	--active:  #e64b3b;
+	--text: #444;
 	
-	color: var(--black);
+	color: var(--text);
 	background-color: var(--white);
 	min-width: 360px;
 	
@@ -32,9 +33,11 @@ body {
 	--col: 420px; /*Вертикальная колонка слева*/
 }
 .dark {
+	--text: #fbfdff;
 	--link: #daf3ff;
 	--hover: #97cde7;
 	--active: #fdffcc;
+	color: var(--text);
 }
 a {
 	color:  var(--link);
@@ -46,6 +49,9 @@ a:active {
 	color: var(--active);
 }
 p {
+	padding: 0;
+	margin: 0;
+	padding-top: var(--para);
 	padding-bottom:  var(--para);
 }
 @media (max-width: 1199px) {
