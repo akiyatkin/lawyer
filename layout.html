@@ -1,134 +1,136 @@
 {svg::}-lawyer/svg.html
 {HEADER:}
-	<div class="container {~sid}" style="display: grid; padding-bottom: 0.5rem; padding-top: 1rem; align-items: center; grid-template-columns: max-content 1fr; justify-content: end">
-		<style>
-			#{div} {
-				/*border-bottom: 2px solid var(--blue);*/
-				
-				/*position: sticky; top: 0; */
-				/*background-image: url('/images/gray_jean.png');
-				background-size: 200px;*/
-				z-index: 1;
-				
-				/*--hover: var(--blue);*/
-			}
-			#{div} a {
-				--link: var(--text);
-				/*color: inherit;*/
-				border-bottom: none;
-			}
-			.{~sid} a:hover {
-				/*color:  var(--red);*/
-			}
-			.{~sid} .fil0,
-			.{~sid} .fil1 { 
-				transition: fill 300ms;
-			}
-			.{~sid} .bant {
-				transition: transform 500ms;
-				transform-origin: center;
-				position: relative;
-			}
-			.{~sid} svg:hover .bant {
-				transform: scale(1.3);
-				
-			}
-			/*.{~sid} svg:hover .fil1 {
-				fill: var(--blue);
+	<div class="container">
+		<div class="{~sid}" style="display: grid; padding-bottom: 0.5rem; padding-top: 1rem; align-items: center; grid-template-columns: max-content 1fr; justify-content: end">
+			<style>
+				#{div} {
+					/*border-bottom: 2px solid var(--blue);*/
+					
+					/*position: sticky; top: 0; */
+					/*background-image: url('/images/gray_jean.png');
+					background-size: 200px;*/
+					z-index: 1;
+					
+					/*--hover: var(--blue);*/
+				}
+				#{div} a {
+					--link: var(--text);
+					/*color: inherit;*/
+					border-bottom: none;
+				}
+				.{~sid} a:hover {
+					/*color:  var(--red);*/
+				}
+				.{~sid} .fil0,
+				.{~sid} .fil1 { 
+					transition: fill 300ms;
+				}
+				.{~sid} .bant {
+					transition: transform 500ms;
+					transform-origin: center;
+					position: relative;
+				}
+				.{~sid} svg:hover .bant {
+					transform: scale(1.3);
+					
+				}
+				/*.{~sid} svg:hover .fil1 {
+					fill: var(--blue);
 
-			}*/
-			.{~sid} svg:hover .fil0 {
-				fill: var(--text);
-			}
-		</style>
-		<div class="logoblock">
-			<style media="(min-width: 768px)">.{~sid} .logoblock { width:var(--col) }</style>
-			<a href="#home">
-				{:svg.logo}
-			</a>
-		</div>
-		<div class="barblock" style="align-self: start; margin-top: 13px; opacity:0.5">
-			<style media="(min-width: 768px)">.{~sid} .barblock { display:none }</style>
-			<style media="(max-width: 767px)">.{~sid} .barblock { display:block }</style>
-			<div role="button" tabindex="0" aria-label="Меню" class="mobilebtn">
-				<style>
-					.mobilebtn {
-						user-select: none;
-						cursor: pointer;
-						display: none;
-						align-items: center;
-						align-self: center;
-						margin-left: auto;
-						height: 100%;
-						width: 36px;
-						border-radius: 0;
-						background-color: transparent;
-					}
-					.mobilebtn .bars {
-						width:100%;
-						/*margin-top:2px;*/
-					}
-					.mobilebtn .line {
-						transition: 0.2s;
-						width: 100%;
-						height: 1px;
-						border-radius: 1px;
-						background-color: var(--text);
-						border-radius: 1px;
-					}
-					.mobilebtn .line + .line {
-						margin-top: 5.35px;
-					}
-					.mobilebtn:focus .line
-					.mobilebtn:hover .line {
-						background-color: var(--orange);
-					}
-					.mobilebtn .top {
-						transform-origin: 2px 8px;
-						transform-origin: left;
-					}
-					.mobilebtn .middle {
-						opacity: 1;
-					}
-					.mobilebtn .bottom {
-						transform-origin: 4px -3px;
-						transform-origin: left;
-					}
-					
-					.mobilebtn.show .top {
-						transform: rotate(45deg);
-					}
-					.mobilebtn.show .middle {
-						opacity: 0;
-					}
-					.mobilebtn.show .bottom {	
-						transform: rotate(-45deg);
-					}
-					
-					@media (max-width: 991px) {
-						.mobilebtn {
-							display: flex;
-						}
-					}
-				</style>
-				<div class="bars">
-					<div class="line top"></div>
-					<div class="line middle"></div>
-					<div class="line middle"></div>
-					<div class="line middle"></div>
-					<div class="line bottom"></div>
-				</div>
+				}*/
+				.{~sid} svg:hover .fil0 {
+					fill: var(--text);
+				}
+			</style>
+			<div class="logoblock">
+				<style media="(min-width: 768px)">.{~sid} .logoblock { width:var(--col) }</style>
+				<a href="#home">
+					{:svg.logo}
+				</a>
 			</div>
 
-		</div>
-		
-		
-		<div class="menublock" style="text-transform: uppercase; /*font-weight: bold; */grid-auto-flow: column; gap:1rem; justify-content: start;">
-			<style media="(min-width: 768px)">.{~sid} .menublock { display:grid }</style>
-			<style media="(max-width: 767px)">.{~sid} .menublock { display:none }</style>
-			{data.menu.header::item}
-		</div>
+			<div class="barblock" style="align-self: start; margin-top: 12px; opacity:0.5">
+				<style media="(min-width: 768px)">.{~sid} .barblock { display:none }</style>
+				<style media="(max-width: 767px)">.{~sid} .barblock { display:block }</style>
+				<div role="button" tabindex="0" aria-label="Меню" class="mobilebtn">
+					<style>
+						.mobilebtn {
+							user-select: none;
+							cursor: pointer;
+							display: none;
+							align-items: center;
+							align-self: center;
+							margin-left: auto;
+							height: 100%;
+							width: 36px;
+							border-radius: 0;
+							background-color: transparent;
+						}
+						.mobilebtn .bars {
+							width:100%;
+							/*margin-top:2px;*/
+						}
+						.mobilebtn .line {
+							transition: 0.2s;
+							width: 100%;
+							height: 1px;
+							border-radius: 1px;
+							background-color: var(--text);
+							border-radius: 1px;
+							transform-origin: right;
+						}
+						.mobilebtn .line + .line {
+							margin-top: 7px;
+						}
+						.mobilebtn:focus .line
+						.mobilebtn:hover .line {
+							background-color: var(--orange);
+						}
+						.mobilebtn .top {
+							/*transform-origin: 2px 8px;*/
+							
+						}
+						.mobilebtn .middle {
+							opacity: 1;
+						}
+						.mobilebtn .bottom {
+							/*transform-origin: 4px -3px;
+							transform-origin: left;*/
+						}
+						
+						.mobilebtn.show .top {
+							transform: rotate(-42deg);
+						}
+						.mobilebtn.show .middle {
+							opacity: 0;
+						}
+						.mobilebtn.show .bottom {	
+							transform: rotate(+42deg);
+						}
+						
+						@media (max-width: 991px) {
+							.mobilebtn {
+								display: flex;
+							}
+						}
+					</style>
+					<div class="bars">
+						<div class="line top"></div>
+						<div class="line middle"></div>
+						<div class="line middle"></div>
+						<div class="line bottom"></div>
+					</div>
+				</div>
 
+			</div>
+			
+			
+			<div class="menublock" style="font-size: var(--p); text-transform: uppercase; /*font-weight: bold; */grid-auto-flow: column; gap:1rem; justify-content: start;">
+				<style media="(min-width: 768px)">.{~sid} .menublock { display:grid }</style>
+				<style media="(max-width: 767px)">.{~sid} .menublock { display:none }</style>
+				{data.menu.header::item}
+			</div>
+		</div>
 	</div>
 	<div class="mobilemenu">
 		<style>
@@ -222,50 +224,100 @@
 	</div>
 	{item:}<a href="{href}">{name}</a> 
 {FOOTER:}
-	<div style="padding: 3rem 0">
-		<style>
-			footer {
-				color: white;
-				background-color: var(--text);
-			}
-			footer .cont img {
-				margin-right:10px;
-				margin-top: 10px;
-			}
-			footer .heading {
-				font-weight: bold;
-				/*font-size: 125%;*/
-				text-transform: uppercase;
-				/*line-height:160%;*/
-				padding-bottom: 5px;
-				padding-top: 5px;
-			}
-
-			footer a {
-				padding-bottom: 5px;
-				padding-top: 5px;
-				display: inline-block;
-				/*color:white;*/
-				text-decoration: underline;
-			}
-			/*footer a:hover {
-				color:#ffe599;
-			}*/
-			footer .cont a {
-				text-decoration: none;
-			}
-		</style>
+	<div class="dark" style="padding: var(--padding) 0; background-color: var(--dark);">
 		<div class="container">
-			<div style="display: flex; gap: 10px; flex-wrap: wrap; grid-area: copy; justify-content: space-between;">
+			<div class="{~sid}" style="margin-top: var(--padding);  grid-template-columns: 1fr max-content; gap: var(--para)">
+				<style media="(min-width:575px)">.{~sid} { display: grid; }</style>
+				<style>
+					.{~sid} a {
+						border: none;
+					}
+				</style>
+				<div style="padding-bottom:var(--para)">
+					<h3>Гражданкин и&nbsp;партнёры</h3>
+					<p>
+						Юридические услуги от лидеров рынка.
+						Более 150 юридических услуг, 7 отделов, 70 профессиональных юристов.
+					</p>
+					<p>
+						Адрес: г. Новосибирск, ул.Дуси Ковальчук, 250
+					</p>
+					<a href="/#form"><button>Получить консультацию</button></a>
+				</div>
+				<div>
+					<div style="padding-bottom: var(--parax2); font-size: var(--p); text-transform: uppercase; display: grid; grid-auto-flow: row; gap:1rem; justify-content: start;">
+						{data.menu.footer::item}
+					</div>
+				</div>
+			</div>
+			
+			<hr>
+			<div style="margin-top:  var(--para); display: flex; gap: 10px; flex-wrap: wrap; grid-area: copy; justify-content: space-between;">
 				<div>
 					{~years(:2009)} ©&nbsp;Все&nbsp;права&nbsp;защищены.
 				</div>
 				<div style="text-align: right;">
-					<div id="COUNERS"></div>
+					<div id="COUNTERS"></div>
 				</div>
 			</div>
 			<div>
 				Создание сайтов &mdash; <a style="border: none; text-decoration:none" href="http://itlife-studio.ru"><span style="color:#44a9fe">Айти</span><span style="color:#9fd70a">лайф</span></a>
+			</div>
+		</div>
+	</div>
+{NUMBERS:}
+	
+	<div style="margin-top: var(--padding); display: grid; grid-template-columns: repeat(auto-fit, minmax(var(--card),1fr)); gap: var(--para)">
+		<style>
+			#{div} .item {
+				text-align: center;
+
+			}
+			#{div} .item .descr {
+				text-align: left;
+			}
+			#{div} .item .num {
+				font-size: 42px;
+			}
+			#{div} .item .label {
+				margin-bottom: var(--para);
+				font-size: 12px;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+			#{div} .item .ico {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 40px;
+			}
+		</style>
+		<div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--para)">
+			<div class="item">
+				<div class="ico">*</div>
+				<div class="num">ТОП-3</div>
+				<div class="label">Рейтинг</div>
+				<div class="descr">Входим в ТОП-3 по версии всероссийского рейтинга ПРАВО.РУ</div>
+			</div>
+			<div class="item">
+				<div class="ico">*</div>
+				<div class="num">2009</div>
+				<div class="label">Год основания</div>
+				<div class="descr">12 лет совершенствуем клиентский сервис и привлекаем лучших юристов</div>
+			</div>
+		</div>
+		<div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--para)">
+			<div class="item">
+				<div class="ico">*</div>
+				<div class="num">93%</div>
+				<div class="label">Дел выигрываем</div>
+				<div class="descr">Берёмся, когда уверены и можем гарантировать результат с финансовой ответственностью.</div>
+			</div>
+			<div class="item">
+				<div class="ico">*</div>
+				<div class="num">40</div>
+				<div class="label">юристов</div>
+				<div class="descr">Представляют клиентов в вопросах недвижимости и земли по всей России.</div>
 			</div>
 		</div>
 	</div>
