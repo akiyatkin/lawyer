@@ -50,8 +50,8 @@
 			</div>
 
 			<div class="barblock" style="align-self: start; margin-top: 12px; opacity:0.5">
-				<style media="(min-width: 768px)">.{~sid} .barblock { display:none }</style>
-				<style media="(max-width: 767px)">.{~sid} .barblock { display:block }</style>
+				<style media="(min-width: 830px)">.{~sid} .barblock { display:none }</style>
+				<style media="(max-width: 829px)">.{~sid} .barblock { display:block }</style>
 				<div role="button" tabindex="0" aria-label="Меню" class="mobilebtn">
 					<style>
 						.mobilebtn {
@@ -126,8 +126,8 @@
 			
 			
 			<div class="menublock" style="font-size: var(--p); text-transform: uppercase; /*font-weight: bold; */grid-auto-flow: column; gap:1rem; justify-content: start;">
-				<style media="(min-width: 768px)">.{~sid} .menublock { display:grid }</style>
-				<style media="(max-width: 767px)">.{~sid} .menublock { display:none }</style>
+				<style media="(min-width: 830px)">.{~sid} .menublock { display:grid }</style>
+				<style media="(max-width: 829px)">.{~sid} .menublock { display:none }</style>
 				{data.menu.header::item}
 			</div>
 		</div>
@@ -161,7 +161,7 @@
 				display: grid; grid-template-columns: 1fr max-content; 
 				grid-gap: 10px; margin-bottom: 10px; margin-top: 10px
 			}
-			@media (min-width: 768px) {
+			@media (min-width: 830px) {
 				.mobilemenu.show {
 					max-height: 0;
 					visibility: hidden;
@@ -267,7 +267,7 @@
 	</div>
 {NUMBERS:}
 	
-	<div style="margin-top: var(--padding); display: grid; grid-template-columns: repeat(auto-fit, minmax(var(--card),1fr)); gap: var(--para)">
+	<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(var(--card),1fr)); gap: var(--para)">
 		<style>
 			#{div} .item {
 				text-align: center;
