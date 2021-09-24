@@ -44,11 +44,7 @@ body {
 	--active: #fdffcc;
 	color: var(--text);
 }
-#{div} .title {
-	font-size:20px;
-	margin-bottom: var(--para); 
-	font-weight: normal; 
-}
+
 a {
 	color:  var(--link);
 }
@@ -183,9 +179,38 @@ hr {
 }
 
 
-
- 
-
+.cards {
+	display: grid; 
+	grid-template-columns: repeat(auto-fill, minmax(var(--card), 1fr)); 
+	gap:var(--parax2)
+}
+.cards .card {
+	display: grid;
+	grid-template-columns: var(--padding) 1fr;
+	gap: var(--para);
+}
+.cards .image {
+	display: flex;
+	justify-content: center;
+	align-self: flex-start;
+}
+.layout {
+	grid-template-columns: var(--col) 1fr; 
+	gap: var(--parax2)
+}
+.layout .column {
+	padding-bottom: var(--parax2);
+}
+@media (min-width:767px) {
+	.layout { 
+		display: grid; 
+	}
+	.layout .line {
+		border-right: 1px var(--link) solid;
+		padding-right:var(--para);
+		
+	}
+}
 .container {
 	width:100%;
 	padding-right: var(--padding);

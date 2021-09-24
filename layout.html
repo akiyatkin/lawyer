@@ -182,7 +182,7 @@
 				
 			</div>
 			<p align="right">
-				<button>Запросить звонок</button>
+				<a style="border:none" href="#call"><button>Запросить звонок</button></a>
 			</p>
 		</div>
 		<script type="module" async>
@@ -224,8 +224,11 @@
 	</div>
 	{item:}<a href="{href}">{name}</a> 
 {FOOTER:}
+
 	<div class="dark" style="padding: var(--padding) 0; background-color: var(--dark);">
+
 		<div class="container">
+			<hr>
 			<div class="{~sid}" style="margin-top: var(--padding);  grid-template-columns: 1fr max-content; gap: var(--para)">
 				<style media="(min-width:575px)">.{~sid} { display: grid; }</style>
 				<style>
@@ -233,16 +236,16 @@
 						border: none;
 					}
 				</style>
-				<div style="padding-bottom:var(--para)">
-					<h3>Гражданкин и&nbsp;партнёры</h3>
-					<p>
-						Юридические услуги от лидеров рынка.
-						Более 150 юридических услуг, 7 отделов, 70 профессиональных юристов.
+				<div id="contacts" style="padding-bottom:var(--para)">
+					<h2>Гражданкин и&nbsp;партнёры</h2>
+					<p style="max-width:500px">
+						Юридические услуги от лидера рынка.
+						Более 150&nbsp;юридических&nbsp;услуг, 7&nbsp;отделов, 70&nbsp;профессиональных&nbsp;юристов.
 					</p>
 					<p>
-						Адрес: г. Новосибирск, ул.Дуси Ковальчук, 250
+						<b>Адрес:</b> г. Новосибирск, ул.Дуси Ковальчук, 250
 					</p>
-					<a href="/#form"><button>Получить консультацию</button></a>
+					<a style="border: none" href="#form"><button>Получить консультацию</button></a>
 				</div>
 				<div>
 					<div style="padding-bottom: var(--parax2); font-size: var(--p); text-transform: uppercase; display: grid; grid-auto-flow: row; gap:1rem; justify-content: start;">
@@ -294,13 +297,13 @@
 		</style>
 		<div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--para)">
 			<div class="item">
-				<div class="ico">*</div>
+				<div class="ico">{:svg.honar}</div>
 				<div class="num">ТОП-3</div>
 				<div class="label">Рейтинг</div>
 				<div class="descr">Входим в ТОП-3 по версии всероссийского рейтинга ПРАВО.РУ</div>
 			</div>
 			<div class="item">
-				<div class="ico">*</div>
+				<div class="ico">{:svg.priz}</div>
 				<div class="num">2009</div>
 				<div class="label">Год основания</div>
 				<div class="descr">12 лет совершенствуем клиентский сервис и привлекаем лучших юристов</div>
@@ -308,13 +311,13 @@
 		</div>
 		<div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--para)">
 			<div class="item">
-				<div class="ico">*</div>
+				<div class="ico">{:svg.thumbup}</div>
 				<div class="num">93%</div>
 				<div class="label">Дел выигрываем</div>
 				<div class="descr">Берёмся, когда уверены и можем гарантировать результат с финансовой ответственностью.</div>
 			</div>
 			<div class="item">
-				<div class="ico">*</div>
+				<div class="ico">{:svg.hat}</div>
 				<div class="num">40</div>
 				<div class="label">юристов</div>
 				<div class="descr">Представляют клиентов в вопросах недвижимости и земли по всей России.</div>
